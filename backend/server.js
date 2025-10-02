@@ -4,6 +4,8 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 
+// Force deployment trigger - CORS fix v2
+
 // Routes
 const groupRoutes = require('./routes/groups');
 const expenseRoutes = require('./routes/expenses');
