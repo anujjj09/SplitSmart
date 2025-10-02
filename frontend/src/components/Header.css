@@ -1,0 +1,122 @@
+header.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: 80px;
+  padding: 1.5rem 2rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.header .logo {
+  text-decoration: none;
+  color: white !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: opacity 0.2s;
+  background: transparent !important;
+}
+
+.header .logo:hover {
+  opacity: 0.9;
+}
+
+.header .logo h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: white !important;
+  background: transparent !important;
+}
+
+.header .tagline {
+  font-size: 1rem;
+  opacity: 0.9;
+  font-weight: 400;
+  color: white !important;
+  background: transparent !important;
+}
+
+.header .nav {
+  display: flex;
+  gap: 2rem;
+  background: transparent !important;
+}
+
+.header .nav-link {
+  color: white !important;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+}
+
+.header .nav-link:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-1px);
+}
+
+.header .nav-link.active {
+  background: rgba(255, 255, 255, 0.25) !important;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header.header {
+    padding: 1rem 1.5rem !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    text-align: center !important;
+  }
+  
+  .header .logo h1 {
+    font-size: 1.8rem;
+  }
+  
+  .header .tagline {
+    font-size: 0.9rem;
+  }
+  
+  .header .nav {
+    gap: 1rem;
+  }
+  
+  .header .nav-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+  
+  .nav {
+    gap: 1rem;
+  }
+}

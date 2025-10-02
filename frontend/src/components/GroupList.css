@@ -1,0 +1,363 @@
+.group-list-container {
+  width: 100%;
+}
+
+.groups-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.groups-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+}
+
+.groups-subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.group-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.group-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  position: relative;
+  width: 100%;
+}
+
+.group-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-primary);
+}
+
+.group-card-header {
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  background: white;
+}
+
+.group-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.group-name {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.group-name a {
+  color: #1e293b;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: block;
+}
+
+.group-name a:hover {
+  color: var(--color-primary);
+}
+
+.group-description {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 500px;
+}
+
+.group-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.group-card-body {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.group-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat {
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s;
+}
+
+.stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+
+.member-list {
+  margin-top: 1rem;
+}
+
+.member-list-label {
+  font-size: 0.9rem;
+  color: #374151;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  display: block;
+}
+
+.members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.member-tag {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s;
+}
+
+.member-tag:hover {
+  background: #e5e7eb;
+}
+
+.member-tag.more {
+  background: #ddd6fe;
+  color: #5b21b6;
+  border-color: #c4b5fd;
+}
+
+.group-card-footer {
+  padding: 1rem 1.5rem;
+  background: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-help {
+  flex: 1;
+}
+
+.help-text {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+
+.group-members {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.members-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.members-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.member-tag {
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid #dbeafe;
+}
+
+.total-balance {
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border-top: 1px solid #d1fae5;
+  text-align: center;
+}
+
+.balance-positive {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border-color: #d1fae5;
+}
+
+.balance-negative {
+  background: linear-gradient(135deg, #fef2f2 0%, #fef7f7 100%);
+  border-color: #fecaca;
+}
+
+.balance-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.balance-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.balance-amount.positive {
+  color: #059669;
+}
+
+.balance-amount.negative {
+  color: #dc2626;
+}
+
+.balance-amount.neutral {
+  color: #6b7280;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #6b7280;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .group-list {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .groups-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .groups-subtitle {
+    font-size: 1rem;
+  }
+  
+  .group-card-header {
+    padding: 1rem 1rem 0.75rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .group-actions {
+    align-self: flex-end;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .group-card-body {
+    padding: 0 1rem 1rem 1rem;
+  }
+  
+  .group-card-footer {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  
+  .footer-help {
+    text-align: center;
+  }
+  
+  .help-text {
+    font-size: 0.85rem;
+  }
+  
+  .group-name {
+    font-size: 1.5rem;
+  }
+  
+  .group-description {
+    font-size: 0.9rem;
+  }
+}

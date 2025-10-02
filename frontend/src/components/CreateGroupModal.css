@@ -1,0 +1,19 @@
+.char-count {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: right;
+  margin-top: 0.25rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.modal-content form {
+  margin: 0;
+}
+
+.modal-footer {
+  gap: 0.75rem;
+}
