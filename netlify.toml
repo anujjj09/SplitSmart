@@ -8,6 +8,11 @@
 [build]
   base = "frontend"
   publish = "frontend/build"
-  command = "npm run build"
+  command = "CI=false npm run build"
+
+# Node.js version specification
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
 
 # Environment variables will be set in Netlify dashboard
