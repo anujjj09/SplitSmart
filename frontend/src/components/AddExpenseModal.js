@@ -290,21 +290,16 @@ const AddExpenseModal = ({ isOpen, onClose, onExpenseAdded, groupId, members = [
         }))
       };
 
-      console.log('Sending expense data:', expenseData);
-
       // Handle payment information based on split type
       if (formData.splitType === 'multi-payer') {
         expenseData.paidByMultiple = formData.paidByMultiple.map(payment => ({
           memberId: payment.memberId,
           amount: parseFloat(payment.amount) || 0
         }));
-        console.log('PaidByMultiple data:', expenseData.paidByMultiple);
       } else if (formData.paidBy) {
         // Single payer - only include if selected
         expenseData.paidBy = formData.paidBy;
       }
-      
-      console.log('Sending expense data:', expenseData);
       
       // Reset form
       setFormData({

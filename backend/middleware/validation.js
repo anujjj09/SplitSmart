@@ -85,15 +85,10 @@ function validateMember(req, res, next) {
  * Validate expense data
  */
 const validateExpense = (req, res, next) => {
-  console.log('=== EXPENSE VALIDATION DEBUG ===');
-  console.log('Request body:', JSON.stringify(req.body, null, 2));
-  console.log('Content-Type:', req.headers['content-type']);
-  
   const { description, amount, splitType, splitBetween, paidBy, paidByMultiple } = req.body;
   
   // Validate description
   if (!description || typeof description !== 'string' || description.trim() === '') {
-    console.log('❌ Validation failed: description issue. Value:', description, 'Type:', typeof description);
     return res.status(400).json({
       error: { message: 'Description is required and must be a non-empty string', field: 'description' }
     });
@@ -101,7 +96,6 @@ const validateExpense = (req, res, next) => {
   
   // Validate amount
   if (!amount || typeof amount !== 'number' || amount <= 0) {
-    console.log('❌ Validation failed: amount issue. Value:', amount, 'Type:', typeof amount);
     return res.status(400).json({
       error: { message: 'Amount must be a positive number', field: 'amount' }
     });
@@ -110,7 +104,6 @@ const validateExpense = (req, res, next) => {
   // Validate splitType
   const validSplitTypes = ['equal', 'unequal', 'multi-payer'];
   if (!splitType || !validSplitTypes.includes(splitType)) {
-    console.log('❌ Validation failed: splitType issue. Value:', splitType);
     return res.status(400).json({
       error: { message: 'Split type must be either "equal", "unequal", or "multi-payer"', field: 'splitType' }
     });
@@ -118,7 +111,6 @@ const validateExpense = (req, res, next) => {
   
   // Validate splitBetween
   if (!splitBetween || !Array.isArray(splitBetween) || splitBetween.length === 0) {
-    console.log('❌ Validation failed: splitBetween issue. Value:', splitBetween);
     return res.status(400).json({
       error: { message: 'Split between must be an array with at least one member', field: 'splitBetween' }
     });
@@ -126,13 +118,11 @@ const validateExpense = (req, res, next) => {
   
   // For single payer expenses, paidBy is optional but if provided must be valid
   if (splitType !== 'multi-payer' && paidBy && (typeof paidBy !== 'string' || paidBy.trim() === '')) {
-    console.log('❌ Validation failed: paidBy issue. Value:', paidBy);
     return res.status(400).json({
       error: { message: 'paidBy must be a valid member ID', field: 'paidBy' }
     });
   }
-  
-  console.log('✅ Validation passed, proceeding...');
+
   next();
 };
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { formatDate } from '../utils/helpers';
 import './GroupList.css';
 
 const GroupList = ({ groups, onDeleteGroup }) => {
@@ -27,7 +26,6 @@ const GroupList = ({ groups, onDeleteGroup }) => {
 
 const GroupCard = ({ group, onDelete }) => {
   const memberCount = group.members?.length || 0;
-  const createdDate = formatDate(group.createdAt);
 
   return (
     <div className="group-card">
