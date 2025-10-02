@@ -117,11 +117,6 @@ SplitSmart/
 - [ ] Mobile app using React Native
 - [ ] Receipt scanning with OCR
 - [ ] Integration with payment apps
-- [ ] Deploy to cloud (AWS or Heroku)
-
-## Demo & Screenshots
-
-*[Planning to add screenshots and maybe a demo video]*
 
 ## Reflection
 
@@ -131,7 +126,5 @@ I'm pretty proud of how it turned out, especially considering this is my first m
 
 ---
 
-**Built by**: Anuj (3rd Year CSE, MAIT)  
-**Technologies**: React.js, Node.js, Express.js, CSS3  
-**Project Duration**: [Add your timeline]  
-**GitHub**: [Your GitHub profile]
+**Built by**: Anuj Sharma(3rd Year CSE, MAIT)  
+**Technologies**: React.js, Node.js, Express.js, CSS3   
