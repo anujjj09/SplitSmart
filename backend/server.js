@@ -26,7 +26,24 @@ app.use(limiter);
 
 // CORS configuration
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3001',
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      process.env.FRONTEND_URL || 'http://localhost:3001',
+      'http://localhost:3001',
+      'http://localhost:3000',
+      'https://glittering-cajeta-240d93.netlify.app'
+    ];
+    
+    // Remove trailing slashes and check
+    const normalizedOrigin = origin ? origin.replace(/\/$/, '') : '';
+    const normalizedAllowed = allowedOrigins.map(url => url.replace(/\/$/, ''));
+    
+    if (!origin || normalizedAllowed.includes(normalizedOrigin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
 
