@@ -34,6 +34,14 @@ Hey! This is my expense splitting web application that I built for managing shar
 
 3. Open http://localhost:3000 and you're good to go!
 
+## Testing
+
+I wrote a simple bash script to test all the API endpoints:
+```bash
+./test-api.sh
+```
+It creates a test group, adds members, creates expenses, and cleans up - basically tests the whole flow automatically.
+
 ## Project Structure
 
 ```

@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# SplitSmart MVP Test Script
-# This script tests all the core API endpoints
+# Quick API test script I wrote to make sure everything works
+# Saves me from manually testing through the UI every time I make changes
 
 API_BASE="http://localhost:5001/api"
 
-echo "🧪 Testing SplitSmart MVP API"
-echo "============================="
+echo "🧪 Testing my SplitSmart API endpoints"
+echo "======================================"
 
 # Test 1: Health Check
 echo "1. Testing health check..."
@@ -99,5 +99,5 @@ echo "10. Testing group deletion..."
 curl -s -X DELETE "$API_BASE/groups/$GROUP_ID" | grep -q "success" && echo "✅ Group deleted" || echo "❌ Group deletion failed"
 
 echo ""
-echo "🎉 API Testing Complete!"
-echo "========================"
+echo "🎉 All tests done! API seems to be working fine."
+echo "==============================================="
