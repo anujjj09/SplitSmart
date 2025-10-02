@@ -1,0 +1,13 @@
+# Netlify build configuration for React SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Build settings
+[build]
+  base = "frontend"
+  publish = "frontend/build"
+  command = "npm run build"
+
+# Environment variables will be set in Netlify dashboard
