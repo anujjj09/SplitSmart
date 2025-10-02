@@ -8,13 +8,14 @@
 [build]
   base = "frontend"
   publish = "build"
-  command = "npm ci && npm run build"
+  command = "npm install && npm install ajv@^8.0.0 --save-dev && GENERATE_SOURCEMAP=false CI=false npm run build"
 
 # Node.js version specification
 [build.environment]
-  NODE_VERSION = "16"
-  NPM_VERSION = "8"
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
   CI = "false"
+  GENERATE_SOURCEMAP = "false"
   NODE_OPTIONS = "--max-old-space-size=4096"
 
 # Environment variables will be set in Netlify dashboard
