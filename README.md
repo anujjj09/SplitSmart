@@ -1,75 +1,103 @@
-# SplitSmart MVP
+# SplitSmart - Expense Splitting Web App 💰
 
-A web application to easily share and split expenses among groups.
+Hey! This is my expense splitting web application that I built for managing shared expenses with friends/roommates. Got tired of manually calculating who owes what after group dinners and trips, so I decided to build something to automate it.
 
-## Features
+## What it does
 
-- Create and manage expense groups
-- Add members to groups
-- Track shared expenses with flexible splitting
-- Real-time balance calculations
-- Export data as CSV
-- Responsive design
+- Create groups for different friend circles or trips
+- Add people to groups and track shared expenses
+- Automatically calculates who owes what to whom
+- Supports different splitting methods (equal splits, custom amounts)
+- Export everything to CSV if needed
+- Works on mobile and desktop
 
-## Tech Stack
+## Tech Stack I Used
 
-- **Frontend**: React.js
+- **Frontend**: React.js (my first time building something this big in React!)
 - **Backend**: Node.js with Express
-- **Storage**: In-memory (for MVP)
-- **Styling**: CSS3 with responsive design
+- **Data**: Just stored in memory for now (planning to add a database later)
+- **Styling**: Plain CSS (didn't want to overcomplicate things)
 
-## Quick Start
+## How to run this thing
 
-1. Install all dependencies:
+1. Clone this repo and install everything:
    ```bash
+   git clone <your-repo-url>
+   cd SplitSmart
    npm run install-all
    ```
 
-2. Start development servers:
+2. Start both frontend and backend:
    ```bash
    npm run dev
    ```
 
-3. Open your browser:
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:5000
+3. Open http://localhost:3000 and you're good to go!
 
 ## Project Structure
 
 ```
-/splitsmart
-  /backend          # Express.js server
-  /frontend         # React.js client
-  package.json      # Root package.json for scripts
+SplitSmart/
+├── backend/          # API server stuff
+│   ├── controllers/  # Main logic
+│   ├── routes/       # API endpoints
+│   └── server.js     # Entry point
+├── frontend/         # React app
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── services/
+└── package.json      # Scripts to run everything
 ```
 
-## API Endpoints
+## Main Features
 
 ### Groups
-- `GET /api/groups` - Get all groups
-- `POST /api/groups` - Create a new group
-- `GET /api/groups/:id` - Get group details
-- `DELETE /api/groups/:id` - Delete a group
-
-### Members
-- `POST /api/groups/:groupId/members` - Add member to group
-- `DELETE /api/groups/:groupId/members/:memberId` - Remove member
+- Create new expense groups
+- Add/remove members
+- Delete groups when done
 
 ### Expenses
-- `GET /api/groups/:groupId/expenses` - Get group expenses
-- `POST /api/groups/:groupId/expenses` - Add new expense
-- `PUT /api/expenses/:id` - Update expense
-- `DELETE /api/expenses/:id` - Delete expense
+- Add expenses with descriptions and amounts
+- Choose who paid and how to split it
+- Edit or delete expenses if you made mistakes
+- Different categories (food, transport, entertainment, etc.)
 
-### Export
-- `GET /api/groups/:groupId/export` - Export group data as CSV
+### Balance Tracking
+- See who owes money and to whom
+- Get settlement suggestions (like "Alex should pay Rs.200 to Sarah")
+- Export data to CSV for record keeping
 
-## Development
+## API Endpoints (if you're interested)
 
-This is an MVP with in-memory data storage. Data will be lost when the server restarts.
+- `GET /api/groups` - Get all groups
+- `POST /api/groups` - Create new group
+- `POST /api/groups/:id/members` - Add member to group
+- `POST /api/groups/:id/expenses` - Add expense
+- And more...
 
-For production, consider:
-- Database integration (PostgreSQL/MongoDB)
-- User authentication
-- Data persistence
-- Advanced splitting algorithms
+## Current Limitations
+
+- Data is stored in memory, so it resets when you restart the server
+- No user authentication (anyone can access any group)
+- Pretty basic UI (but functional!)
+
+## What I learned
+
+- How to structure a full-stack web application
+- React hooks and state management
+- Building RESTful APIs with Express
+- CSS for responsive design
+- Git workflow and project organization
+
+## Future improvements I'm thinking about
+
+- Add a proper database (PostgreSQL maybe?)
+- User authentication and personal accounts
+- Better UI with some framework like Material-UI
+- Real-time updates using WebSockets
+- Mobile app using React Native
+
+---
+
+Built by a 3rd year CSE student at MAIT 🎓
