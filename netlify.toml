@@ -7,12 +7,14 @@
 # Build settings
 [build]
   base = "frontend"
-  publish = "frontend/build"
-  command = "CI=false npm run build"
+  publish = "build"
+  command = "npm ci && npm run build"
 
 # Node.js version specification
 [build.environment]
-  NODE_VERSION = "18"
-  NPM_VERSION = "9"
+  NODE_VERSION = "16"
+  NPM_VERSION = "8"
+  CI = "false"
+  NODE_OPTIONS = "--max-old-space-size=4096"
 
 # Environment variables will be set in Netlify dashboard
