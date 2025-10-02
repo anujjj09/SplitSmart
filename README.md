@@ -2,6 +2,12 @@
 
 Hey! This is my expense splitting web application that I built for managing shared expenses with friends/roommates. Got tired of manually calculating who owes what after group dinners and trips, so I decided to build something to automate it.
 
+## 🌐 Live Demo
+
+**Try it out**: https://glittering-cajeta-240d93.netlify.app/
+
+**Backend API**: https://splitsmart-181t.onrender.com
+
 ## What it does
 
 - Create groups for different friend circles or trips
