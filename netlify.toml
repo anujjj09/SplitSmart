@@ -17,5 +17,6 @@
   CI = "false"
   GENERATE_SOURCEMAP = "false"
   NODE_OPTIONS = "--max-old-space-size=4096"
+  REACT_APP_API_URL = "https://splitsmart-181t.onrender.com/api"
 
 # Environment variables will be set in Netlify dashboard
