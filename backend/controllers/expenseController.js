@@ -69,7 +69,7 @@ const createExpense = async (req, res, next) => {
 
     // Verify paidBy member exists in group (if provided)
     if (req.body.paidBy) {
-      const payer = group.getMember(req.body.paidBy);
+      const payer = group.getMemberByIdOrEmail(req.body.paidBy);
       if (!payer) {
         return res.status(400).json({
           error: {
@@ -84,7 +84,7 @@ const createExpense = async (req, res, next) => {
     if (req.body.paidByMultiple && req.body.paidByMultiple.length > 0) {
       const invalidPayers = [];
       req.body.paidByMultiple.forEach(payment => {
-        if (!group.getMember(payment.memberId)) {
+        if (!group.getMemberByIdOrEmail(payment.memberId)) {
           invalidPayers.push(payment.memberId);
         }
       });
@@ -103,7 +103,7 @@ const createExpense = async (req, res, next) => {
     // Verify all split members exist in group
     const invalidMembers = [];
     req.body.splitBetween.forEach(split => {
-      if (!group.getMember(split.memberId)) {
+      if (!group.getMemberByIdOrEmail(split.memberId)) {
         invalidMembers.push(split.memberId);
       }
     });
@@ -164,7 +164,7 @@ const updateExpense = async (req, res, next) => {
     if (req.body.paidBy || req.body.splitBetween) {
       const group = GroupModel.findInstanceById(existingExpense.groupId);
       
-      if (req.body.paidBy && !group.getMember(req.body.paidBy)) {
+      if (req.body.paidBy && !group.getMemberByIdOrEmail(req.body.paidBy)) {
         return res.status(400).json({
           error: {
             message: 'Payer is not a member of this group',
@@ -176,7 +176,7 @@ const updateExpense = async (req, res, next) => {
       if (req.body.splitBetween) {
         const invalidMembers = [];
         req.body.splitBetween.forEach(split => {
-          if (!group.getMember(split.memberId)) {
+          if (!group.getMemberByIdOrEmail(split.memberId)) {
             invalidMembers.push(split.memberId);
           }
         });

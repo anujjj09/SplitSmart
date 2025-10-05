@@ -51,6 +51,14 @@ class Group {
     return this.members.find(m => m.id === memberId);
   }
 
+  getMemberByEmail(email) {
+    return this.members.find(m => m.email === email);
+  }
+
+  getMemberByIdOrEmail(identifier) {
+    return this.members.find(m => m.id === identifier || m.email === identifier);
+  }
+
   toJSON() {
     return {
       id: this.id,
